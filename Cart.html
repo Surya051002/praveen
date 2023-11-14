@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cart - Shopping Website</title>
+    <link rel="stylesheet" href="Cart.css">
+</head>
+
+<body>
+    <header>
+        <h1>Your Shopping Cart</h1>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-content">
+        <section class="cart-items">
+            <h2>Items in Your Cart</h2>
+            <div class="cart-item">
+                <img src="product1.jpg" alt="Product 1">
+                <div class="item-details">
+                    <h3>Product 1</h3>
+                    <p>$50.00</p>
+                    <button onclick="removeFromCart(1)">Remove</button>
+                </div>
+            </div>
+            <!-- More cart items go here -->
+        </section>
+
+        <section class="cart-summary">
+            <h2>Cart Summary</h2>
+            <div class="summary-details">
+                <p>Total Items: <span id="totalItems">1</span></p>
+                <p>Total Price: $<span id="totalPrice">50.00</span></p>
+            </div>
+            <button onclick="checkout()">Proceed to Checkout</button>
+        </section>
+    </main>
+    <script>
+        // Function to remove an item from the cart
+        function removeFromCart(productId) {
+            // Assuming productId is used to identify the item to remove
+            // Here you can implement logic to remove the item from the cart
+            // For example:
+            console.log(`Removing product ${productId} from the cart`);
+            // You may also update the UI to reflect the removed item
+        }
+
+        // Function to calculate the total price and update the cart summary
+        function calculateTotalPrice() {
+            // Assuming you have the logic to fetch the prices of items in the cart
+            let totalPrice = 0; // Initialize total price to zero
+
+            // Calculate the total price (sample logic)
+            // Here, fetch prices of items and sum them up
+            // Replace this logic with your actual calculation from the cart
+
+            // Example calculation (assuming prices are stored in an array)
+            const itemPrices = [50.00, 30.00, 25.00]; // Sample item prices
+            totalPrice = itemPrices.reduce((acc, price) => acc + price, 0);
+
+            return totalPrice;
+        }
+
+        // Function to update the cart summary
+        function updateCartSummary() {
+            const totalItems = 3; // Replace with the actual count of items in the cart
+            const totalPrice = calculateTotalPrice();
+
+            // Update the cart summary in the HTML
+            document.getElementById('totalItems').innerText = totalItems;
+            document.getElementById('totalPrice').innerText = totalPrice.toFixed(2); // Display total price formatted with 2 decimal places
+        }
+
+        // Function to handle checkout process
+        function checkout() {
+            // Implement checkout logic here
+            alert('Proceeding to checkout...'); // Placeholder alert for demonstration
+        }
+
+    </script>
+    <footer>
+        <p>&copy; 2023 Shopping Website</p>
+    </footer>
+</body>
+
+</html>
